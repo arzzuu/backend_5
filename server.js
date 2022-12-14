@@ -13,11 +13,11 @@ const cards = [
 });
 app.get("/card/:id", function (req, res) {
   const idOfcard = parseInt(req.params.id);
-  const card = cards.find((card) => card.id === idOfcard);
-  if (!card) {
+  const c = cards.find((c) => c.id === idOfcard);
+  if (!c) {
     res.status(404).send();
   }
-  res.status(200).json(card);
+  res.status(200).json(c);
 });
 
 app.listen(3000, function () {
